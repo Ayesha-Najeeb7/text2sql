@@ -1,0 +1,9 @@
+torch
+sentencepiece
+matplotlib
+numpy
+streamlit
+records
+babel
+tqdm
+tabulate

@@ -1,0 +1,12 @@
+== Table 1: data ==
+train pairs=56355 src mean/max=42.5/222 tgt mean/max=14.8/65 dropped=19
+dev   pairs=8421 src mean/max=42.5/167 tgt mean/max=14.8/44 dropped=0
+test  pairs=15878 src mean/max=42.7/260 tgt mean/max=14.9/46 dropped=0
+LR: rises for 4000 steps: True; decays after: True; lr(20000)/lr(4000)=0.4473 vs (20000/4000)^-0.5=0.4472
+== trainable parameters: 7,577,600 ==
+Causal mask: max change at earlier positions after editing last token = 0.00e+00  -> PASS (last position changed by 1.90e+00)
+Padding mask: max output change after adding 5 <pad> to the source = 3.34e-06  -> PASS
+Attention rows: min/max row sum = 1.000000/1.000000; weight on <pad> keys = 0.0e+00  -> PASS
+Causal attention rows sum to 1: True; upper-triangle weight = 0.0e+00
+Weight sharing: output.weight is embedding.weight -> True  (counted once: 7,577,600 parameters)
+Gold round-trip (dev): logical form 99.49%  execution 99.49%  -> PASS
