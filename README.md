@@ -4,9 +4,9 @@ An English question + a table's column names → a SQL query. The full encoder�
 *Attention Is All You Need* is written from basic PyTorch layers (no `nn.Transformer`, no `nn.MultiheadAttention`,
 no Hugging Face, no pretrained weights) and trained once from random initialisation.
 
-Authors: _Member 1_, _Member 2_ &nbsp;|&nbsp; Blog: _link_ &nbsp;|&nbsp; LinkedIn: _link_
+Authors: Ayesha Najeeb, Nalain-e-Muhammad &nbsp;|&nbsp; Blog: [_link_](https://medium.com/@ayeshanajeeb712/teaching-a-transformer-to-write-sql-text-to-sql-on-wikisql-built-from-scratch-d2746dcc0c74) 
 
-![front end](results/fig5_frontend.png)
+![front end](results/frontend ss.png)
 
 ## Layout
 
@@ -63,8 +63,37 @@ matches under both greedy and beam decoding, which exercises the whole model →
 
 ## Results
 
-See `results/tables.md` (Tables 1–4), `results/samples.md` (5 correct + 5 wrong dev examples) and the figures
-`results/fig1…fig5`. **Fill in after training:** paste `results/tables.md` here.
+## Table 1 - Data
+
+| | Train | Dev | Test |
+|---|---|---|---|
+| Pairs | 56,355 | 8,421 | 15,878 |
+| Mean / max source length | 42.5 / 222 | 42.5 / 167 | 42.7 / 260 |
+| Mean / max target length | 14.8 / 65 | 14.8 / 44 | 14.9 / 46 |
+| Pairs dropped as too long | 19 | 0 | 0 |
+
+## Table 2 - Model and training
+
+| | |
+|---|---|
+| Trainable parameters | 7,577,600 |
+| Epochs trained / best epoch | 20 / 19 |
+| Best dev loss | 1.4541 |
+| Training time and GPU | 22 min, Tesla T4 |
+
+## Table 3 - Official metrics
+
+| Split | Decoding | Logical form (%) | Execution (%) | Parse failures (%) |
+|---|---|---|---|---|
+| Dev | greedy | 64.45 | 70.73 | 0.00 |
+| Dev | beam (4) | 64.94 | 71.11 | 0.00 |
+| Test | beam | 64.99 | 70.97 | 0.01 |
+
+## Table 4 - Component accuracy (dev, beam)
+
+| sel column (%) | agg (%) | WHERE clause (%) |
+|---|---|---|
+| 92.72 | 89.88 | 75.23 |
 
 ## Notes
 

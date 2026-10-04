@@ -1,0 +1,10 @@
+{
+  "params": 7577600,
+  "epochs": 20,
+  "best_epoch": 19,
+  "best_dev_loss": 1.4541365418399477,
+  "train_seconds": 1313.9999239444733,
+  "device": "Tesla T4",
+  "warmup": 4000,
+  "batch_size": 64
+}
